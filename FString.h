@@ -17,8 +17,8 @@ public:
     FString();
 
     template<size_t N>
-    FString(const char (&other)[N])  //Initialization FString object by char array[N]
-    {                                //(for example string literal)
+    FString(const char (&other)[N])   //Initialization FString object by char array[N]
+    {                                 //(for example string literal)
         memcpy(stringLine,other,N);
         lentgh = N;
     }

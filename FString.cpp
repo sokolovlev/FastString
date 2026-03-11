@@ -10,7 +10,7 @@
 FString::FString() : stringLine{},lentgh(0)
 {}
 
-FString::FString(const FString &other)   //Initialization FString by another FString
+FString::FString(const FString &other)    //Initialization FString by another FString
 {
     memcpy(stringLine,other.stringLine,other.lentgh);
     lentgh = other.lentgh;
