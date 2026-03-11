@@ -5,9 +5,7 @@
 #ifndef UNTITLED23_FSTRING_H
 #define UNTITLED23_FSTRING_H
 
-#include <cstddef>
 #include <iostream>
-
 
 class FString
 {
