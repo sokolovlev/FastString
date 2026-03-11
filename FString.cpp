@@ -15,11 +15,6 @@ FString::FString(const FString &other)   //Initialization FString by another FSt
     memcpy(stringLine,other.stringLine,other.lentgh);
     lentgh = other.lentgh;
 }
-FString::FString(const SmartArray &other)
-{
-    memcpy(stringLine,other.ptr,other.lentgh);
-    lentgh = other.lentgh;
-}
 
 FString& FString::operator=(const FString& other)
 {
@@ -28,19 +23,12 @@ FString& FString::operator=(const FString& other)
     return *this;
 }
 
-FString& FString::operator=(const SmartArray &other)
+FString operator+(const FString& other1,const FString& other2)
 {
-    memcpy(stringLine,other.array,other.lentgh);
-    lentgh = other.lentgh;
-    return *this;
-}
+    FString result;
 
-SmartArray operator+(const FString& other1,const FString& other2)
-{
-    SmartArray result;
-
-    memcpy(result.ptr,other1.stringLine,other1.lentgh);
-    memcpy(result.ptr + other1.lentgh - 1,other2.stringLine,other2.lentgh);
+    memcpy(result.stringLine,other1.stringLine,other1.lentgh);
+    memcpy(result.stringLine + other1.lentgh - 1,other2.stringLine,other2.lentgh);
 
     result.lentgh = other1.lentgh - 1 + other2.lentgh;
     return result;
