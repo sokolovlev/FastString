@@ -2,8 +2,8 @@
 // Created by Lev on 09.03.2026.
 //
 
-#ifndef UNTITLED23_FSTRING_H
-#define UNTITLED23_FSTRING_H
+#ifndef FAST_AND_SIMPLY_MINIMALISTIC_STRING_V_0_1_FSTRING_H
+#define FAST_AND_SIMPLY_MINIMALISTIC_STRING_V_0_1_FSTRING_H
 
 #include <iostream>
 
@@ -71,4 +71,4 @@ FString operator+(const FString& other1,const char (&other2)[N])
     return result;
 }
 
-#endif //UNTITLED23_FSTRING_H
+#endif //FAST_AND_SIMPLY_MINIMALISTIC_STRING_V_0_1_FSTRING_H
