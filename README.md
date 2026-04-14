@@ -1,2 +1,2 @@
 Simply and Fast string.
-MIT License:
+MIT License: [LICENSE](license.txt)
