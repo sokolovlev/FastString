@@ -11,7 +11,7 @@ class FString
 {
 private:
     char stringLine[256];
-    unsigned char lentgh;
+    unsigned char length;
 
 public:
     FString();
@@ -20,7 +20,7 @@ public:
     FString(const char (&other)[N])   //Initialization FString object by char array[N]
     {                                 //(for example string literal)
         memcpy(stringLine,other,N);
-        lentgh = N;
+        length = N;
     }
 
     FString(const FString &other);     //Initialization FString object by another FString object)
@@ -29,7 +29,7 @@ public:
     FString& operator=(const char (&other)[N]) //Assignment the array type of char and lentgh N
     {                                          //(variable lentgh) for FString object
         memcpy(stringLine,other,N);
-        lentgh = N;
+        length = N;
         return *this;
     }
 
@@ -53,9 +53,9 @@ FString operator+(const char (&other1)[N],const FString& other2)
     FString result;
 
     memcpy(result.stringLine,other1,N);
-    memcpy(result.stringLine + N - 1,other2.stringLine,other2.lentgh);
+    memcpy(result.stringLine + N - 1,other2.stringLine,other2.length);
 
-    result.lentgh = N - 1 + other2.lentgh;
+    result.length = N - 1 + other2.length;
     return result;
 }
 
@@ -64,10 +64,10 @@ FString operator+(const FString& other1,const char (&other2)[N])
 {
     FString result;
 
-    memcpy(result.stringLine,other1.stringLine,other1.lentgh);
-    memcpy(result.stringLine + other1.lentgh - 1,other2,N);
+    memcpy(result.stringLine,other1.stringLine,other1.length);
+    memcpy(result.stringLine + other1.length - 1,other2,N);
 
-    result.lentgh = other1.lentgh - 1 + N;
+    result.length = other1.length - 1 + N;
     return result;
 }
 

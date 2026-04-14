@@ -7,19 +7,19 @@
 
 #include "FString.h"
 
-FString::FString() : stringLine{},lentgh(0)
+FString::FString() : stringLine{},length(0)
 {}
 
 FString::FString(const FString &other)    //Initialization FString by another FString
 {
-    memcpy(stringLine,other.stringLine,other.lentgh);
-    lentgh = other.lentgh;
+    memcpy(stringLine,other.stringLine,other.length);
+    length = other.length;
 }
 
 FString& FString::operator=(const FString& other)
 {
-    memcpy(stringLine,other.stringLine,other.lentgh);
-    lentgh = other.lentgh;
+    memcpy(stringLine,other.stringLine,other.length);
+    length = other.length;
     return *this;
 }
 
@@ -27,10 +27,10 @@ FString operator+(const FString& other1,const FString& other2)
 {
     FString result;
 
-    memcpy(result.stringLine,other1.stringLine,other1.lentgh);
-    memcpy(result.stringLine + other1.lentgh - 1,other2.stringLine,other2.lentgh);
+    memcpy(result.stringLine,other1.stringLine,other1.length);
+    memcpy(result.stringLine + other1.length - 1,other2.stringLine,other2.length);
 
-    result.lentgh = other1.lentgh - 1 + other2.lentgh;
+    result.length = other1.length - 1 + other2.length;
     return result;
 }
 
